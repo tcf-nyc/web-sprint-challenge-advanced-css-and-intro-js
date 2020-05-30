@@ -17,6 +17,9 @@
   img {
     height: 15%;
   }
+  a {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 500px) {
   .artists-container {
