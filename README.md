@@ -23,10 +23,30 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. How would you describe preprocessing to someone new to CSS?
+-) Preprocessing is a scripting language that extend the default capabilities
+   of CSS. It enables us to use logic in CSS.
+
 2. What is your favorite concept in preprocessing? What is the concept that gives you the most trouble?
+   -) Nesting & Importing.
+   -) Conditional using variable because eventhough it looks the value can be
+      set dynamically, but in reality, the value is set at the beginning when
+      the file is loaded.
+
 3. How would you explain the concept of a variable to someone new to programming?
+    -) a variable is placeholder to contain value, its value can usually be
+      modified unless it is specifically intended to have fixed/constant value.
+
 4. What is the purpose of using functions in code?
+ -) There are two main reasons:
+      1. To break down portion of codes that share common purpose so that
+         the structure of the program is cleaner.
+      2. By breaking down this portion of codes into smaller sections, code
+         repetition can be avoided as the function can be called repeatedly
+         without having to re-write the codes within the function.
+
 5. What is JSON data?
+-) It is a text-base format that consists of arrays of key-value pair
+      that is enclosed by quotation mark.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
