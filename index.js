@@ -325,7 +325,11 @@ function lotsOfArt(artistList) {
   }
   return artistsLotsPaint;
 }
-console.log(lotsOfArt(artists));
+console.log('List of artists that painted more than 100 paintings \n----------------------------------');
+let paintedLotsArtist = lotsOfArt(artists);
+paintedLotsArtist.forEach(artist => console.log(artist.id, '  ', artist.name, '  ', artist.paintings, 'paintings'));
+// console.log(lotsOfArt(artists));
+console.log('\n');
 
 
 // 🎨🎨 STRETCH 🎨🎨//
