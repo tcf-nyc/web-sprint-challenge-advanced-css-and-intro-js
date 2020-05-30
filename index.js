@@ -209,14 +209,18 @@ const artists = [
 (2) Bio of the third artist (2nd index) in the array */
 
 /* (1) */
-console.log(artists[0].name);
-
+console.log('\nTask 1:');
+console.log('Name of the first artist: ',artists[0].name);
 /* (1) */
-console.log(artists[2].bio);
+console.log('Bio of the third artist: \n',artists[2].bio);
+console.log('\n');
+
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-
-
+artists[8].name = 'Vincent Van Gogh';
+console.log('Task 2:');
+console.log(`Updated 9th artist name: ${artists[8].name}`);
+console.log('\n');
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
@@ -229,9 +233,9 @@ console.log(artists[2].bio);
 function getArtistByIndex(artistData, idx) {
   return `The artist at index ${idx} is ${artistData[idx].name}`;
 }
-
+console.log('Task 3:');
 console.log(getArtistByIndex(artists, 0));
-
+console.log('\n');
 /**
 
 
@@ -253,9 +257,10 @@ function get20s(artistList) {
 
   return artist20th;
 }
-console.log('20th century artists \n -------------------');
+console.log('Task 4:');
+console.log('20th century artists \n-------------------');
 get20s(artists);
-
+console.log('\n');
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -269,10 +274,12 @@ get20s(artists);
 */
 function removeArtist(artistList, idx) {
   artistList.splice(idx, 1);
-  console.log(artistList.length);
+  console.log('Task 5:');
+  console.log(`Remaining artist after removal of idx ${idx}: ${artistList.length}`);
 }
 
-// removeArtist(artists, 0);
+removeArtist(artists, 3);
+console.log('\n');
 
 /**
 
@@ -294,7 +301,8 @@ At the end, this function should console.log() the new array with information ad
 
 function addArtist(artistList, newArtist) {
   artistList.push(newArtist);
-  console.log(artistList);
+  return artistList;
+  // console.log(artistList);
 }
 
 let newArtist = {
@@ -306,8 +314,19 @@ let newArtist = {
   bio: 'Doménikos Theotokópoulos (Greek: Δομήνικος Θεοτοκόπουλος [ðoˈminikos θeotoˈkopulos]; October 1541 –  7 April 1614), most widely known as El Greco (\"The Greek\"), was a painter, sculptor and architect of the Spanish Renaissance. \"El Greco\" was a nickname, a reference to his Greek origin, and the artist normally signed his paintings with his full birth name in Greek letters, Δομήνικος Θεοτοκόπουλος, Doménikos Theotokópoulos, often adding the word Κρής Krēs, Cretan.'
 };
 
-addArtist(artists, newArtist);
+let updatedArtistsList = addArtist(artists, newArtist);
 
+console.log('Task 6:');
+console.log('Updated artists list after addition \n------------------------------');
+updatedArtistsList.forEach(function (artist) {
+    /*let strProperties = '';
+    for (const property in artist) {
+        strProperties += artist[property];
+        strProperties += artist[property];
+    } */
+    console.log(artist.id, artist.name);
+});
+console.log('\n');
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -325,11 +344,13 @@ function lotsOfArt(artistList) {
   }
   return artistsLotsPaint;
 }
-console.log('List of artists that painted more than 100 paintings \n----------------------------------');
+
+console.log('Task 7:');
+console.log('List of artists that painted more than 100 paintings \n--------------------------------------------');
 let paintedLotsArtist = lotsOfArt(artists);
 paintedLotsArtist.forEach(artist => console.log(artist.id, '  ', artist.name, '  ', artist.paintings, 'paintings'));
-// console.log(lotsOfArt(artists));
 console.log('\n');
+// console.log(lotsOfArt(artists));
 
 
 // 🎨🎨 STRETCH 🎨🎨//
