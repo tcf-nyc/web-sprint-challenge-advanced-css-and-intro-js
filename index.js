@@ -240,14 +240,14 @@ console.log(getArtistByIndex(artists, 0));
 function get20s(artistList) {
 
   let birthYear;
-  let artist20th=[];
+  let artist20th = [];
 
-  for (let i=0; i<artistList.length; i++) {
-      birthYear = artistList[i].years.substr(0,4);
-      if (birthYear>=1900 && birthYear<=2000) {
-        artist20th.push(artistList[i]);
-        console.log(artist20th[artist20th.length-1].id, artist20th[artist20th.length-1].name, artist20th[artist20th.length-1].years);
-      }
+  for (let i = 0; i < artistList.length; i++) {
+    birthYear = artistList[i].years.substr(0, 4);
+    if (birthYear >= 1900 && birthYear <= 2000) {
+      artist20th.push(artistList[i]);
+      console.log(artist20th[artist20th.length - 1].id, artist20th[artist20th.length - 1].name, artist20th[artist20th.length - 1].years);
+    }
   }
 
 
@@ -272,7 +272,7 @@ function removeArtist(artistList, idx) {
   console.log(artistList.length);
 }
 
-removeArtist(artists, 0);
+// removeArtist(artists, 0);
 
 /**
 
@@ -318,10 +318,10 @@ and returns an array with names of artists who painted more than 100 paintings.
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
 function lotsOfArt(artistList) {
-  let artistsLotsPaint=[];
+  let artistsLotsPaint = [];
 
   for (let i = 0; i < artistList.length; i++) {
-      if (artistList[i].paintings > 100) artistsLotsPaint.push(artistList[i]);
+    if (artistList[i].paintings > 100) artistsLotsPaint.push(artistList[i]);
   }
   return artistsLotsPaint;
 }
@@ -368,3 +368,9 @@ function randomize(/* Code here */) {
 
 
 /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
+
+let artists20th = artists.filter(artist => artist.years.substr(0, 4) >= 1900 &&
+  artist.years.substr(0, 4) <= 2000);
+
+console.log('20th century artists using filter \n----------------------------------');
+artists20th.forEach(artist => console.log(artist.id, '  ', artist.name, '  ', artist.years));
